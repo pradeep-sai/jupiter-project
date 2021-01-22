@@ -12,9 +12,17 @@ class Restaurant:
             del restaurants[restId]
             print("Restaurant deleted successfully")
 
-    def createRestaurant(self, restId, name,  maxOrders):
+    def createRestaurant(self, restId, name, maxOrders):
         if restId in restaurants.keys():
             print("Restaurant with the given Id already exists")
         else:
-            restaurants[restId] = RestaurantObject(restId, name,  maxOrders)
+            restaurants[restId] = RestaurantObject(restId, name, maxOrders)
             print("Restaurant created Succesfully")
+
+    def updateRestaurant(self, restId, name, maxOrders):
+        if restId not in restaurants.keys():
+            print("Restaurant doesn't exist")
+        else:
+            restaurants[restId].name = name
+            restaurants[restId].maxOrders = maxOrders
+            print("Restaurent details updated successfully")

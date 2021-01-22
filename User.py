@@ -23,7 +23,7 @@ class User:
         if username not in users.keys():
             print("user does not exist")
         else:
-            print(users[username])
+            print(users[username].name+" "+users[username].email)
 
     def updateProfile(self, username, name, email):
         if username not in users.keys():
@@ -31,5 +31,5 @@ class User:
         else:
             users[username].name = name
             users[username].email = email
-            print(username + "updated successfully")
+            print(username + " updated successfully")
 

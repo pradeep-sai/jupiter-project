@@ -18,5 +18,14 @@ class Orders:
         elif restaurants[restaurantId].totalOrders < restaurants[restaurantId].maxOrders:
             orders[orderId] = OrdersObject(orderId, username, restaurantId, itemId)
             restaurants[restaurantId].totalOrders = restaurants[restaurantId].totalOrders + 1
+            print("order placed successfully")
         else:
             print("max orders reached")
+
+    def retrieveOrder(self, username):
+        if username not in users.keys():
+            print("user does not exist")
+        else:
+            for order in orders.values():
+                if order.username == username:
+                    print(str(order.orderId) + " " + str(order.restaurantId) + " " + str(order.itemId))

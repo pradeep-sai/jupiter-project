@@ -1,5 +1,5 @@
 class OrdersObject:
-    def _init_(self, orderId, username, restaurantId, itemId):
+    def __init__(self, orderId, username, restaurantId, itemId):
         self.orderId = orderId
         self.username = username
         self.restaurantId = restaurantId
